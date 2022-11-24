@@ -38,7 +38,6 @@ public class RicercaLineareCon {
     if (i == x.length) {
       return false;
     } else {
-        boolean vI = ricercaLineareConLogica(x, e, i+1);
         // Si può fare anche in questo modo, visto che ritorniamo true se e in x[i]
         //oppure se e era già presente nell'intervallo precendente
         if (x[i] == e || ricercaLineareConLogica(x, e, i+1)) {
