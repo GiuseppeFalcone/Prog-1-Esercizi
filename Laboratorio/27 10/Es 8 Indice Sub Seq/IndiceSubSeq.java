@@ -5,37 +5,61 @@ public class IndiceSubSeq {
         int indice = ricercaIndice(a, b);
         System.out.println("Print Main " + indice);
     }
+
     public static int ricercaIndice(int[] a, int[] b){
-        if ((a != null) && (b != null)){
-            return ricercaIndice(a, 0, b, 0, -1);
-        } else {
-            return -1;
+        int i = a.lenght-1;
+        while (i >= 0){
+            int temp = i;
+            int j = b.length-1;
+            while (j >= 0){
+                if ((a[i] == b[j]) && (ris > i)){
+                    ris = i;
+                    j++;
+                    i++;
+                } else {
+                    i = temp;
+                    ris = -1;
+                }
+            }
+            i = i-1;
         }
     }
 
-    public static int ricercaIndice(int[] a, int i, int[] b, int j, int ind){
-        if (i < a.length){
-            if (j == b.length){
-                return ind;
+    /*
+     * Prova ricorsiva
+     * 
+     public static int ricercaIndice(int[] a, int[] b){
+         if ((a != null) && (b != null)){
+             return ricercaIndice(a, 0, b, 0, -1);
             } else {
-                if (a[i] == b[j]){
-                    int vI = ricercaIndice(a, i+1, b, j+1, ind);
-                    if (ind == -1 || ind > i){
-                        ind = i;
-                    }
+                return -1;
+            }
+        }
+        
+        public static int ricercaIndice(int[] a, int i, int[] b, int j, int ind){
+            if (i < a.length){
+                if (j == b.length){
                     return ind;
                 } else {
-                    int vI = ricercaIndice(a, i+1, b, 0, ind);
-                    if (vI != -1){
-                        return vI;
-                    } else {
+                    if (a[i] == b[j]){
+                        int vI = ricercaIndice(a, i+1, b, j+1, ind);
+                        if (ind == -1 || ind > i){
+                            ind = i;
+                        }
                         return ind;
+                    } else {
+                        int vI = ricercaIndice(a, i+1, b, 0, ind);
+                        if (vI != -1){
+                            return vI;
+                        } else {
+                            return ind;
+                        }
                     }
+                    
                 }
-                
+            } else {
+                return ind;
             }
-        } else {
-            return ind;
         }
-    }
+        */
 }
