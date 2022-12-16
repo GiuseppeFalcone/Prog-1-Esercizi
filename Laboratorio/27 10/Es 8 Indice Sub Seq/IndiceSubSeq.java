@@ -1,7 +1,7 @@
 public class IndiceSubSeq {
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 1, 2, 3};
-        int[] b = {1, 1, 2};
+        int[] a = {1, 2, 3, 2, 2, 3};
+        int[] b = {2, 2, 3};
         int indice = findSubsequence(a, b);
         System.out.println("Indice: " + indice);
     }
@@ -26,7 +26,7 @@ public class IndiceSubSeq {
             return findSubsequence(arr, sub, arrIndex + 1, subIndex + 1);
         } else {
             // Valore corrente non corrisponde, continuiamo a cercare dall'indice successivo
-            return findSubsequence(arr, sub, arrIndex + 1, subIndex);
+            return findSubsequence(arr, sub, arrIndex + 1, 0);
         }
     }
     
