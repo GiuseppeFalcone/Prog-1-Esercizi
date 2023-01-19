@@ -1,4 +1,7 @@
-/**  Dati un array ordinato `a`, anche `null` o con `0`  elementi, ed un valore `v` costituisce il wrapper di un metodo ricorsivo dicotomico che restituisce l'indice più piccolo dell'elemento di `a` uguale a `v`, se `v` occorre in `a` almeno una volta.  */
+/**  Dati un array ordinato `a`, anche `null` o con `0`  elementi, 
+ * ed un valore `v` costituisce il wrapper di un metodo ricorsivo dicotomico 
+ * che restituisce l'indice più piccolo dell'elemento di `a` uguale a `v`
+ * , se `v` occorre in `a` almeno una volta.  */
 
 public class RicercaArrayOrdinatoDiFinale {
 
@@ -29,13 +32,18 @@ public class RicercaArrayOrdinatoDiFinale {
         }
       } else { // più di un elemento in [l,...,r)
          int m = (l+r)/2;
-         if (v < a[m]) {
-            /* se c'è, v è nell'intervallo a[l..m) perché a ordinato  */
-            return ricercaDicotomica(a, v, l, m);
-         } else {
-            /* se c'è, v è nell'intervallo a[m..a.length) perché a ordinato */
-            return ricercaDicotomica(a, v, m, r);
-         } 
+         if (a[m] == v){
+          return m;
+         } else{
+
+           if (v < a[m]) {
+             /* se c'è, v è nell'intervallo a[l..m) perché a ordinato  */
+             return ricercaDicotomica(a, v, l, m);
+            } else {
+              /* se c'è, v è nell'intervallo a[m..a.length) perché a ordinato */
+              return ricercaDicotomica(a, v, m, r);
+            } 
+          }
       }
   }
 }
