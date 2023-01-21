@@ -1,12 +1,12 @@
 /** Dati un array qualsiasi a ed un valore v, fornire l'indice più piccolo di a in cui v eventualmente compare. Altrimenti, restituire -1 */
 
-public class RicercaArrayQualsiasiDiFinale {
+public class RicercaArrayQualsiasiErratoDi {
 
   public static void main(String[] args) {
     System.out.println(ricercaArrayQualsiasi(null, 1) == -1);
     System.out.println(ricercaArrayQualsiasi(new int[] {}, 1) == -1);
-    System.out.println(ricercaArrayQualsiasi(new int[] {0,1,2}, 1) == 1);
-    System.out.println(ricercaArrayQualsiasi(new int[] {2,1,4,1}, 1) == 1);
+    System.out.println(ricercaArrayQualsiasi(new int[] {0,1,2,1}, 1) == 1);
+    System.out.println(ricercaArrayQualsiasi(new int[] {2,1,1,4,1}, 1) == 1);
   }
   
   // Wrapper
@@ -28,19 +28,22 @@ public class RicercaArrayQualsiasiDiFinale {
         }
       } else { // più di un elemento in [l,...,r)
          int m = (l+r)/2;
-         int indiceSx = ricercaArrayQualsiasi(a, v, l, m);
-         /*  indiceSx == -1 se v non è in a[l..m) 
-             indiceSx == i se a[i]==v e a[0..i)!=v */
-         int indiceDx = ricercaArrayQualsiasi(a, v, m, r);
-         /*  indiceDx == -1 se v non è in a[m..r) 
-             indiceDx == i se a[i]==v e a[m..i)!=v */
-         if (indiceSx != -1) {
-            return indiceSx;
-            /* Se v occorresse anche in indiceDx!=-1,
-               avremmo indiceSx < indiceDx */
-         } else {
-            return indiceDx;
-         }
+         //if (a[m]==v) {
+          //  return m;
+         //} else {
+            int indiceSx = ricercaArrayQualsiasi(a, v, l, m);
+            /*  indiceSx == -1 se v non è in a[l..m) 
+                indiceSx == i se a[i]==v e a[0..i)!=v */
+            if (indiceSx != -1) {
+               return indiceSx;
+               /* essendo inutile cercare nell'intervallo destro */
+            } else {
+                /* v non è stato trovato in a[l..m) */
+               return ricercaArrayQualsiasi(a, v, m, r);
+                /*  indiceDx == -1 se v non è in a[m..r) 
+                    indiceDx == i se a[i]==v e a[m..r)!=v */
+            }
+         //}
       } 
   }
 }
