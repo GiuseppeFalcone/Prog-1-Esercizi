@@ -34,6 +34,21 @@ public class EsameA1819 {
      * chiamata ricorsiva). e2R deve raddoppiare il valore in a[i] nel 
      * caso in cui (1) i e' pari e (2) a[i] e' strettamente maggiore di v.   
 	 * Scrivere la soluzione immediatamente qui sotto.                */
+	public static void e2(int[] a, int v){
+		if (a != null){
+			e2R(a, a.length, v);
+		}
+	}
+
+	private static void e2R(int[] a, int i, int v){
+		if (i == 0){
+		} else {
+			e2R(a, i-1, v);
+			if (((i-1) % 2 == 0) && (a[i-1] > v)){
+				a[i-1] = 2*a[i-1];
+			}
+		}
+	}
 	 
 	/** ESERCIZIO 3 (Massimo 2 + 2 + 3 + 3 punti -- da consegnare a mano)	 
 	 * Sia P(i) il seguente predicato:
@@ -48,11 +63,21 @@ public class EsameA1819 {
 		int c = 0;
 		int s = 0;
 		// prima di ogni iterazione
+		/*  Passo Base:
+			"0+a[0]+...+a[c-1]==s all'inizio dell'iterazione 0"
+			"0 == s == 0 all'inizio dell'iterazione 0"
+			quindi vero
+		*/
 		while (c < a.length) {
-			// inizio dell'iterazione i >= 0			
+			// inizio dell'iterazione i >= 0
+			/*
+				"0+a[0]+...+a[c-1]==s all'inizio dell'iterazione i"
+				dove i == c
+			 */
 			c = c + 1;
 			s = s + a[c-1];
 			// inizio dell'iterazione i+1 > 0			
+
 		} 
 		return s;
 	}

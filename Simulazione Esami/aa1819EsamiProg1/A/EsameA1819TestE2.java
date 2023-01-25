@@ -38,7 +38,7 @@ public class EsameA1819TestE2 {
         EsameA1819.e2(a8,2);
 	    System.out.println(Arrays.equals(a8,b8)==true);
 	    
-  	    int[] a9 = {3,4, 6,1,2};
+  	    int[] a9 = {3,4,6,1,2};
         int[] b9 = {3,4,12,1,2};
         EsameA1819.e2(a9,5);
 	    System.out.println(Arrays.equals(a9,b9)==true);
