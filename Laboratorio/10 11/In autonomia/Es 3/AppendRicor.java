@@ -15,10 +15,10 @@ public class AppendRicor{
     if (i == c.length){
         } else {
             append(a, b, c, i+1);
-            if (i > a.length && i < c.length){
-                c[i] = b[i - b.length];
-            } else if (i < a.length){
+            if (i < a.length){
                 c[i] = a[i];
+            } else if (i > a.length && i < c.length){
+                c[i] = b[i - b.length]; 
             } else if (i == a.length) {
                 c[i] = b[0];
             }

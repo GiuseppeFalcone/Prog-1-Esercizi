@@ -65,6 +65,8 @@ public class EsameA1819 {
 		// prima di ogni iterazione
 		/*  Passo Base:
 			"0+a[0]+...+a[c-1]==s all'inizio dell'iterazione 0"
+			dato che a [0-1] == a[-1] non esiste, dato che gli indici vanno da 0 a a.length-1
+			il predicato diventa 
 			"0 == s == 0 all'inizio dell'iterazione 0"
 			quindi vero
 		*/
@@ -72,13 +74,19 @@ public class EsameA1819 {
 			// inizio dell'iterazione i >= 0
 			/*
 				"0+a[0]+...+a[c-1]==s all'inizio dell'iterazione i"
-				dove i == c
+				dove i == c + 1   s == a[0]+a[1]+...a[c-1] 
 			 */
 			c = c + 1;
 			s = s + a[c-1];
 			// inizio dell'iterazione i+1 > 0			
-
+				// s == a[0]+a[1]+...a[c+1 -1] 
+				// s == a[0]+a[1]+...a[c -1] 
+				// s == s§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ 
+				//  
 		} 
+		// c = 
+		//s == a[0]+a[1]+...a[c-1] 
+		// 
 		return s;
 	}
 
