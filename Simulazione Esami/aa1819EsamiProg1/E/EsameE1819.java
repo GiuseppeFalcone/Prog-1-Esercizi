@@ -55,8 +55,21 @@ public class EsameE1819 {
 	 * 4) dimostrare che il predicato al punto 2 e' vero (3 pt.)      */
 	public static int e3(int n) {
 		if (n==0)
+		/*
+		 *	e3(n) == #{d | 0<= d <=n && d dispari} diventa
+			e3(0) == #{0 | 0<= 0 <=0 && 0 dispari} vero dato che n == 0
+			e 0 pari, quindi 0 elementi dispari tra 0 e 0
+
+
+		 */
 			return 0;
 		else if (n%2==1)
+		/*
+			Dopo k iterazioni
+		 * e3(n) == #{d | 0<= d <=k && d dispari}
+		 * se n dispari allora sommiamo 1 a d
+		 * e3(n) == #{d+1 | 0<= d+1 <=k && d+1 dispari}
+		 */
 			return e3(n-1)+1;
 		else
 			return e3(n-1)+0;

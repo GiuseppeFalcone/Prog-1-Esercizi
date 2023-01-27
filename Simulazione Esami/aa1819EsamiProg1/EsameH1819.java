@@ -59,11 +59,24 @@ public class EsameH1819 {
 		boolean r = true;
 		int j = 1;
 		// prima di ogni iterazione
+		/*
+		 * true==r vero all'iterazione 0
+		 */
 		while (j-1 < a.length) {
 			// inizio dell'iterazione i >= 0
+			/*
+			 * true&a[0]&&...&&a[j-2]==r all'inizio dell'iterazione i
+			 */
 			j = j+1;
 			r = r&&a[j-2];
 			// inizio dell'iterazione i+1 > 0
+			/*
+			* true&a[0]&&...&&a[j-3]==r all'inizio dell'iterazione i+1
+			* true&a[0]&&...&&a[j-3]&&a[j-2]==r&&a[j-2] all'inizio dell'iterazione i
+			* true&a[0]&&...&&a[j-3]&&a[j-2]==r all'inizio dell'iterazione i
+			* 
+			* 
+			 */
 		}
 		return r;
 	}

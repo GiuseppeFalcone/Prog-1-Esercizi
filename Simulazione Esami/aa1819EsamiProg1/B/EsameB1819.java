@@ -52,12 +52,29 @@ public class EsameB1819 {
 		int r = 1;
 		int i = 0;
 		// prima di ogni iterazione
+		/* 
+		"1*a[0]*...*a[i-1] == r vero all'inizio dell'iterazione 0"
+		"1 == r == 1" vero dato che l'intervallo di elementi da moltiplicare è 0 
+		*/    
 		while (i < a.length) {
 			// inizio dell'iterazione n >= 0
+			/*
+			 * "1*a[0]*...*a[i-1] == r vero all'inizio dell'iterazione n" 
+			 * "1*a[0]*...*a[i-1]*a[i-1+1]== r*a[i]"
+			 */
 			r = r * a[i];
+			/*
+			"1*a[0]*...*a[i-1]*a[i-1+1]== r"
+			*/ 
 			i = i + 1;
 			// inizio dell'iterazione n+1 > 0
+			/*
+			"1*a[0]*...*a[i-1]*a[i]== r"
+			*/
 		}
+		/*
+		 * "1*a[0]*...*a[i-1] == r vero alla fine dell'iterazione i con i == a.length" 
+		 */
 		return r;
 	}
 

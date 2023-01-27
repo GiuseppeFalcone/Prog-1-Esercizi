@@ -62,11 +62,21 @@ public class EsameL1819 {
 	public static int e3(int[] a) {
 		int j = 0;
 		// prima di ogni iterazione
+		/*
+		 * true vera dato che l'intervallo è vuoto
+		 */
 		while (j < a.length) {
 			// inizio dell'iterazione i >= 0
+			/*
+			 * true && a[0]==1 && a[1]==1 && ... && a[j+1-1]==1 e' vera all'inizio dell'iterazione i
+			 * true && a[0]==1 && a[1]==1 && ... && a[j]==1 && a[j+1]==1 e' vera all'inizio dell'iterazione i
+			 * 
+			 */
 			a[j] = 1;
+			// true && a[0]==1 && a[1]==1 && ... && a[j]==1 && a[j+1] == 1e' vera all'inizio dell'iterazione i+1
 			j = j+1;
 			// inizio dell'iterazione i+1 > 0
+			// true && a[0]==1 && a[1]==1 && ... && a[j-1]==1 && a[j+1] == 1e' vera all'inizio dell'iterazione i+1
 		}
 		return 0;
 	}

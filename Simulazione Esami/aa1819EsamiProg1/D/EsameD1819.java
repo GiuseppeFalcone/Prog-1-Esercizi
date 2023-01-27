@@ -53,8 +53,17 @@ public class EsameD1819 {
 	 * 4) dimostrare che il predicato al punto 2 e' vero (3 pt.)      */
 	public static int e3(int[] a, int n) {
 		if (n>0)
+		/* 
+		 * Passo Induttivo:
+		 * e3(a, n) * a[n] == 10*a[0]*...*a[n-1]*a[n] vero
+		 */
 			return e3(a, n-1)*a[n-1];
 		else
+		/*
+		 * Passo Base: 
+		 * 	e3(a, n) == 10*a[0]*...*a[n-1]
+			e3(a, 0) == 10 vero dato che l'intervallo è vuoto
+		 */
 			return 10;
 	}
 	 

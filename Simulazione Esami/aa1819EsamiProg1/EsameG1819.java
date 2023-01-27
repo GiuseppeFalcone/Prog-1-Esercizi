@@ -54,11 +54,21 @@ public class EsameG1819 {
 		boolean r = false;
 		int j = 1;
 		// prima di ogni iterazione
+		/*
+		 * false==r == falso vero prima di ogni iterazione
+		 */
 		while (j-1 < a.length) {
 			// inizio dell'iterazione i >= 0
+			/*
+			 * false||a[0]||...||a[j-2]==r vero alla fine dell'iterazione i
+			 */
 			j = j + 1;
 			r = r || a[j-2];
 			// inizio dell'iterazione i+1 > 0
+			/*
+			 * false||a[0]||...||a[j+1-2]||a[j+1]==r||a[j+1] vero alla fine dell'iterazione i+1
+			 * false||a[0]||...||a[j-2]||a[j]==r vero alla fine dell'iterazione i+1
+			 */
 		}
 		return r;
 	}

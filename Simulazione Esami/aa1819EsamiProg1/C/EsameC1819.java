@@ -38,10 +38,20 @@ public class EsameC1819 {
 	 * 4) dimostrare che il predicato al punto 2 e' vero (3 pt.)      */
 	public static int e3(int[] a, int n) {
 		if (n==0)
+		/*
+		 *  Passo Base: 
+		 * 0 == e3(a,0) vero dato che l'intervallo degli elementi da sommare non ha elementi
+		 */
 			return 0;
 		else
+		/*
+		 * 0+a[0]+...+a[n-1]+a[n]==e3(a,n-1)+a[n]
+		 */
 			return e3(a,n-1) + a[n-1];
 	}
+	/*
+	 * 0+a[0]+...+a[n-1]==e3(a,n)
+	 */
 
 	/** ESERCIZIO 4 (Massimo 8 punti -- da consegnare a mano).
 	 * Scrivere lo stato della memoria della JVM giusto prima della 
